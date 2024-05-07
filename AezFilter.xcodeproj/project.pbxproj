@@ -11,6 +11,7 @@
 		20DEE01E2BE91DF700776480 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20DEE01D2BE91DF700776480 /* ContentView.swift */; };
 		20DEE0202BE91DF900776480 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 20DEE01F2BE91DF900776480 /* Assets.xcassets */; };
 		20DEE0242BE91DF900776480 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 20DEE0232BE91DF900776480 /* Preview Assets.xcassets */; };
+		20DEE02B2BEA81BF00776480 /* PinchZoomView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20DEE02A2BEA81BF00776480 /* PinchZoomView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -20,6 +21,7 @@
 		20DEE01F2BE91DF900776480 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		20DEE0212BE91DF900776480 /* AezFilter.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = AezFilter.entitlements; sourceTree = "<group>"; };
 		20DEE0232BE91DF900776480 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		20DEE02A2BEA81BF00776480 /* PinchZoomView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PinchZoomView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -54,6 +56,7 @@
 			children = (
 				20DEE01B2BE91DF700776480 /* AezFilterApp.swift */,
 				20DEE01D2BE91DF700776480 /* ContentView.swift */,
+				20DEE02A2BEA81BF00776480 /* PinchZoomView.swift */,
 				20DEE01F2BE91DF900776480 /* Assets.xcassets */,
 				20DEE0212BE91DF900776480 /* AezFilter.entitlements */,
 				20DEE0222BE91DF900776480 /* Preview Content */,
@@ -139,6 +142,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				20DEE02B2BEA81BF00776480 /* PinchZoomView.swift in Sources */,
 				20DEE01E2BE91DF700776480 /* ContentView.swift in Sources */,
 				20DEE01C2BE91DF700776480 /* AezFilterApp.swift in Sources */,
 			);
