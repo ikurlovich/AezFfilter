@@ -1,5 +1,5 @@
 //
-//  ContentView.swift
+//  EditorImageView.swift
 //  AezFilter
 //
 //  Created by Ilia Kurlovich on 06.05.24.
@@ -11,11 +11,16 @@ import PhotosUI
 import StoreKit
 import SwiftUI
 
-struct ContentView: View {
+enum PickerCases: String, CaseIterable, Identifiable  {
+    case instruments = "Инструменты", filters = "Фильтры", export = "Экспорт"
+    
+    var id: String { self.rawValue }
+}
+
+struct EditorImageView: View {
     @State private var processedImage: Image?
     @State private var filterIntensity = 0.5
     @State private var selectedItem: PhotosPickerItem?
-    @State private var showingFilters = false
     @State private var rotationAngle: Double = 0.0
     @State private var resetFilterIntensity = false
     
@@ -28,14 +33,15 @@ struct ContentView: View {
     @State private var currentFilter: CIFilter = CIFilter.sepiaTone()
     let context = CIContext()
     
+    @State private var whatPickerCase = PickerCases.filters
+    
     var body: some View {
         
         VStack {
             HStack {
                 Image(systemName: "gobackward.5.ar")
                     .resizable()
-                    .bold()
-                    .frame(width: 28, height: 30)
+                    .frame(width: 22, height: 25)
                     .foregroundStyle(.accent)
                     .padding(.horizontal)
                     .onTapGesture {
@@ -60,16 +66,14 @@ struct ContentView: View {
                 PhotosPicker(selection: $selectedItem) {
                     Image(systemName: "plus")
                         .resizable()
-                        .bold()
-                        .frame(width: 25, height: 25)
+                        .frame(width: 20, height: 20)
                         .foregroundStyle(.accent)
                         .padding(.horizontal)
-                        .onChange(of: selectedItem, loadImage)
+                        .onChange(of: selectedItem, preLoadImage)
                 }
             }
             
             Spacer()
-            
             
             if let processedImage {
                 processedImage
@@ -89,64 +93,84 @@ struct ContentView: View {
             Spacer()
             
             if let processedImage {
-                HStack {
-                    Button(action: {
-                        withAnimation {
-                            rotationAngle -= 90
-                        }
-                    }) {
-                        Image(systemName: "arrow.uturn.backward.square.fill")
-                            .resizable()
-                            .frame(width: 30, height: 30)
+                Picker("Picker", selection: $whatPickerCase) {
+                    ForEach(PickerCases.allCases) { value in
+                        Text(value.rawValue.capitalized).tag(value)
                     }
-                    .padding()
-                    
-                    Button(action: {
-                        withAnimation {
-                            rotationAngle += 90
+                }
+                .pickerStyle(SegmentedPickerStyle())
+                
+                switch whatPickerCase {
+                case .instruments:
+                    HStack(spacing: 20) {
+                        Button(action: {
+                            withAnimation {
+                                rotationAngle -= 90
+                            }
+                        }) {
+                            Image(systemName: "arrow.uturn.backward.square.fill")
+                                .resizable()
+                                .frame(width: 30, height: 30)
                         }
-                    }) {
-                        Image(systemName: "arrow.uturn.right.square.fill")
-                            .resizable()
-                            .frame(width: 30, height: 30)
+                        
+                        Button(action: {
+                            withAnimation {
+                                rotationAngle += 90
+                            }
+                        }) {
+                            Image(systemName: "arrow.uturn.right.square.fill")
+                                .resizable()
+                                .frame(width: 30, height: 30)
+                        }
+                        
+                        VStack {
+                            Slider(value: $filterIntensity)
+                                .onChange(of: filterIntensity, applyProcessing)
+                            
+                            Text("Интенсивность эффекта")
+                                .foregroundStyle(.accent)
+                        }
                     }
-                    .padding()
-                }
-                
-                HStack {
-                    Text("Интенсивность")
-                    Slider(value: $filterIntensity)
-                        .onChange(of: filterIntensity, applyProcessing)
-                }
-                
-                HStack {
-                    Button("Выбрать фильр", action: changeFilter)
+                    .frame(height: 150)
                     
-                    Spacer()
+                case .export:
+                    ShareLink(item: processedImage, preview: SharePreview("AezFilter изображение", image: processedImage)) {
+                        VStack {
+                            Image(systemName: "square.and.arrow.up")
+                                .resizable()
+                                .frame(width: 30, height: 40)
+                            Text("Экспорт")
+                        }
+                        .frame(height: 150)
+                    }
                     
                     
-                    ShareLink(item: processedImage, preview: SharePreview("AezFilter изображение", image: processedImage))
+                case .filters:
+                    ScrollView(.horizontal, showsIndicators: false) {
+                        HStack(spacing: 22) {
+                            FilterExampleUI("Сепия", "FilterSepia") { setFilter(CIFilter.sepiaTone()) }
+                            FilterExampleUI("Контраст", "FilterContrast") { setFilter(CIFilter.unsharpMask()) }
+                            FilterExampleUI("Виньетка", "FilterVignetting") { setFilter(CIFilter.vignette()) }
+                            FilterExampleUI("Размытие", "FilterBlur") { setFilter(CIFilter.gaussianBlur()) }
+                            FilterExampleUI("Пиксели", "FilterPixels") { setFilter(CIFilter.pixellate()) }
+                            FilterExampleUI("Кристал", "FilterCrystal") { setFilter(CIFilter.crystallize()) }
+                            FilterExampleUI("Контуры", "FilterLines") { setFilter(CIFilter.edges()) }
+                        }
+                        .frame(height: 150)
+                    }
                 }
             }
         }
-        .padding([.horizontal, .bottom])
+        .padding(.horizontal)
         .navigationTitle("Редактор фото")
         .navigationBarTitleDisplayMode(.inline)
-        .confirmationDialog("Select a filter", isPresented: $showingFilters) {
-            Button("Кристализация") { setFilter(CIFilter.crystallize() )}
-            Button("Контуры") { setFilter(CIFilter.edges() )}
-            Button("Размытие") { setFilter(CIFilter.gaussianBlur() )}
-            Button("Пикселизация") { setFilter(CIFilter.pixellate() )}
-            Button("Сепия") { setFilter(CIFilter.sepiaTone() )}
-            Button("Контраст") { setFilter(CIFilter.unsharpMask() )}
-            Button("Виньетирование") { setFilter(CIFilter.vignette() )}
-            Button("Отмена", role: .cancel) { }
-        }
-        
     }
     
-    func changeFilter() {
-        showingFilters = true
+    
+    // MARK: - Functions
+    func preLoadImage() {
+        rotationAngle = 0.0
+        loadImage()
     }
     
     func loadImage() {
@@ -174,7 +198,7 @@ struct ContentView: View {
         processedImage = Image(uiImage: uiImage)
     }
     
-    
+    // MARK: - Function for counting the number of times filters have been used before the review is show
     @MainActor func setFilter(_ filter: CIFilter) {
         currentFilter = filter
         loadImage()
@@ -188,5 +212,5 @@ struct ContentView: View {
 }
 
 #Preview {
-    ContentView()
+    EditorImageView()
 }

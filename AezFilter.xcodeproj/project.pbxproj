@@ -8,20 +8,22 @@
 
 /* Begin PBXBuildFile section */
 		20DEE01C2BE91DF700776480 /* AezFilterApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20DEE01B2BE91DF700776480 /* AezFilterApp.swift */; };
-		20DEE01E2BE91DF700776480 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20DEE01D2BE91DF700776480 /* ContentView.swift */; };
+		20DEE01E2BE91DF700776480 /* EditorImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20DEE01D2BE91DF700776480 /* EditorImageView.swift */; };
 		20DEE0202BE91DF900776480 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 20DEE01F2BE91DF900776480 /* Assets.xcassets */; };
 		20DEE0242BE91DF900776480 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 20DEE0232BE91DF900776480 /* Preview Assets.xcassets */; };
 		20DEE02B2BEA81BF00776480 /* PinchZoomView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20DEE02A2BEA81BF00776480 /* PinchZoomView.swift */; };
+		20DEE0322BEC172B00776480 /* FilterExampleUI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20DEE0312BEC172B00776480 /* FilterExampleUI.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		20DEE0182BE91DF700776480 /* AezFilter.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = AezFilter.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		20DEE01B2BE91DF700776480 /* AezFilterApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AezFilterApp.swift; sourceTree = "<group>"; };
-		20DEE01D2BE91DF700776480 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		20DEE01D2BE91DF700776480 /* EditorImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditorImageView.swift; sourceTree = "<group>"; };
 		20DEE01F2BE91DF900776480 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		20DEE0212BE91DF900776480 /* AezFilter.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = AezFilter.entitlements; sourceTree = "<group>"; };
 		20DEE0232BE91DF900776480 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		20DEE02A2BEA81BF00776480 /* PinchZoomView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PinchZoomView.swift; sourceTree = "<group>"; };
+		20DEE0312BEC172B00776480 /* FilterExampleUI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FilterExampleUI.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -55,8 +57,8 @@
 			isa = PBXGroup;
 			children = (
 				20DEE01B2BE91DF700776480 /* AezFilterApp.swift */,
-				20DEE01D2BE91DF700776480 /* ContentView.swift */,
-				20DEE02A2BEA81BF00776480 /* PinchZoomView.swift */,
+				20DEE02D2BEC16D000776480 /* EditorImages */,
+				20DEE02C2BEC019000776480 /* PinchToZoom */,
 				20DEE01F2BE91DF900776480 /* Assets.xcassets */,
 				20DEE0212BE91DF900776480 /* AezFilter.entitlements */,
 				20DEE0222BE91DF900776480 /* Preview Content */,
@@ -70,6 +72,31 @@
 				20DEE0232BE91DF900776480 /* Preview Assets.xcassets */,
 			);
 			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		20DEE02C2BEC019000776480 /* PinchToZoom */ = {
+			isa = PBXGroup;
+			children = (
+				20DEE02A2BEA81BF00776480 /* PinchZoomView.swift */,
+			);
+			path = PinchToZoom;
+			sourceTree = "<group>";
+		};
+		20DEE02D2BEC16D000776480 /* EditorImages */ = {
+			isa = PBXGroup;
+			children = (
+				20DEE01D2BE91DF700776480 /* EditorImageView.swift */,
+				20DEE02E2BEC16EB00776480 /* EditorImageUI */,
+			);
+			path = EditorImages;
+			sourceTree = "<group>";
+		};
+		20DEE02E2BEC16EB00776480 /* EditorImageUI */ = {
+			isa = PBXGroup;
+			children = (
+				20DEE0312BEC172B00776480 /* FilterExampleUI.swift */,
+			);
+			path = EditorImageUI;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -142,8 +169,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				20DEE0322BEC172B00776480 /* FilterExampleUI.swift in Sources */,
 				20DEE02B2BEA81BF00776480 /* PinchZoomView.swift in Sources */,
-				20DEE01E2BE91DF700776480 /* ContentView.swift in Sources */,
+				20DEE01E2BE91DF700776480 /* EditorImageView.swift in Sources */,
 				20DEE01C2BE91DF700776480 /* AezFilterApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
