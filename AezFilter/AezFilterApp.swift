@@ -11,7 +11,7 @@ import SwiftUI
 struct AezFilterApp: App {
     var body: some Scene {
         WindowGroup {
-            EditorImageView()
+            AuthorizationView()
         }
     }
 }

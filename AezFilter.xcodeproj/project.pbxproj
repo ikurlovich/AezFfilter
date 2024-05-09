@@ -7,15 +7,30 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		20C5C4022BECFBA40057D914 /* UniversalButtonUI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20C5C4012BECFBA40057D914 /* UniversalButtonUI.swift */; };
+		20C5C4042BECFBEE0057D914 /* PasswordUI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20C5C4032BECFBEE0057D914 /* PasswordUI.swift */; };
+		20C5C4062BECFC170057D914 /* EmailUI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20C5C4052BECFC170057D914 /* EmailUI.swift */; };
+		20C5C40B2BECFCD40057D914 /* AuthorizationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20C5C40A2BECFCD40057D914 /* AuthorizationView.swift */; };
+		20C5C40D2BECFD810057D914 /* RegistrationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20C5C40C2BECFD810057D914 /* RegistrationView.swift */; };
 		20DEE01C2BE91DF700776480 /* AezFilterApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20DEE01B2BE91DF700776480 /* AezFilterApp.swift */; };
 		20DEE01E2BE91DF700776480 /* EditorImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20DEE01D2BE91DF700776480 /* EditorImageView.swift */; };
 		20DEE0202BE91DF900776480 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 20DEE01F2BE91DF900776480 /* Assets.xcassets */; };
 		20DEE0242BE91DF900776480 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 20DEE0232BE91DF900776480 /* Preview Assets.xcassets */; };
 		20DEE02B2BEA81BF00776480 /* PinchZoomView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20DEE02A2BEA81BF00776480 /* PinchZoomView.swift */; };
 		20DEE0322BEC172B00776480 /* FilterExampleUI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20DEE0312BEC172B00776480 /* FilterExampleUI.swift */; };
+		20DEE0382BECCDA600776480 /* EditorViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20DEE0372BECCDA600776480 /* EditorViewModel.swift */; };
+		20DEE03C2BECD50E00776480 /* EditorToolbarUI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20DEE03B2BECD50E00776480 /* EditorToolbarUI.swift */; };
+		20DEE03E2BECD60800776480 /* EditorFiltersUI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20DEE03D2BECD60800776480 /* EditorFiltersUI.swift */; };
+		20DEE0402BECD6A700776480 /* EditorInstrumentsUI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20DEE03F2BECD6A700776480 /* EditorInstrumentsUI.swift */; };
+		20DEE0422BECD78300776480 /* EditorProcessedImageUI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20DEE0412BECD78300776480 /* EditorProcessedImageUI.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		20C5C4012BECFBA40057D914 /* UniversalButtonUI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UniversalButtonUI.swift; sourceTree = "<group>"; };
+		20C5C4032BECFBEE0057D914 /* PasswordUI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PasswordUI.swift; sourceTree = "<group>"; };
+		20C5C4052BECFC170057D914 /* EmailUI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmailUI.swift; sourceTree = "<group>"; };
+		20C5C40A2BECFCD40057D914 /* AuthorizationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthorizationView.swift; sourceTree = "<group>"; };
+		20C5C40C2BECFD810057D914 /* RegistrationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegistrationView.swift; sourceTree = "<group>"; };
 		20DEE0182BE91DF700776480 /* AezFilter.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = AezFilter.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		20DEE01B2BE91DF700776480 /* AezFilterApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AezFilterApp.swift; sourceTree = "<group>"; };
 		20DEE01D2BE91DF700776480 /* EditorImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditorImageView.swift; sourceTree = "<group>"; };
@@ -24,6 +39,11 @@
 		20DEE0232BE91DF900776480 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		20DEE02A2BEA81BF00776480 /* PinchZoomView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PinchZoomView.swift; sourceTree = "<group>"; };
 		20DEE0312BEC172B00776480 /* FilterExampleUI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FilterExampleUI.swift; sourceTree = "<group>"; };
+		20DEE0372BECCDA600776480 /* EditorViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditorViewModel.swift; sourceTree = "<group>"; };
+		20DEE03B2BECD50E00776480 /* EditorToolbarUI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditorToolbarUI.swift; sourceTree = "<group>"; };
+		20DEE03D2BECD60800776480 /* EditorFiltersUI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditorFiltersUI.swift; sourceTree = "<group>"; };
+		20DEE03F2BECD6A700776480 /* EditorInstrumentsUI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditorInstrumentsUI.swift; sourceTree = "<group>"; };
+		20DEE0412BECD78300776480 /* EditorProcessedImageUI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditorProcessedImageUI.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -37,6 +57,41 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		20C5C4002BECFB8F0057D914 /* UniversalUI */ = {
+			isa = PBXGroup;
+			children = (
+				20C5C4012BECFBA40057D914 /* UniversalButtonUI.swift */,
+				20C5C4032BECFBEE0057D914 /* PasswordUI.swift */,
+				20C5C4052BECFC170057D914 /* EmailUI.swift */,
+			);
+			path = UniversalUI;
+			sourceTree = "<group>";
+		};
+		20C5C4072BECFC6A0057D914 /* Authentication */ = {
+			isa = PBXGroup;
+			children = (
+				20C5C4092BECFCB10057D914 /* Authorization */,
+				20C5C4082BECFC9E0057D914 /* Registration */,
+			);
+			path = Authentication;
+			sourceTree = "<group>";
+		};
+		20C5C4082BECFC9E0057D914 /* Registration */ = {
+			isa = PBXGroup;
+			children = (
+				20C5C40C2BECFD810057D914 /* RegistrationView.swift */,
+			);
+			path = Registration;
+			sourceTree = "<group>";
+		};
+		20C5C4092BECFCB10057D914 /* Authorization */ = {
+			isa = PBXGroup;
+			children = (
+				20C5C40A2BECFCD40057D914 /* AuthorizationView.swift */,
+			);
+			path = Authorization;
+			sourceTree = "<group>";
+		};
 		20DEE00F2BE91DF700776480 = {
 			isa = PBXGroup;
 			children = (
@@ -57,8 +112,10 @@
 			isa = PBXGroup;
 			children = (
 				20DEE01B2BE91DF700776480 /* AezFilterApp.swift */,
+				20C5C4072BECFC6A0057D914 /* Authentication */,
 				20DEE02D2BEC16D000776480 /* EditorImages */,
-				20DEE02C2BEC019000776480 /* PinchToZoom */,
+				20C5C4002BECFB8F0057D914 /* UniversalUI */,
+				20DEE0332BECC8F300776480 /* Extensions */,
 				20DEE01F2BE91DF900776480 /* Assets.xcassets */,
 				20DEE0212BE91DF900776480 /* AezFilter.entitlements */,
 				20DEE0222BE91DF900776480 /* Preview Content */,
@@ -87,6 +144,7 @@
 			children = (
 				20DEE01D2BE91DF700776480 /* EditorImageView.swift */,
 				20DEE02E2BEC16EB00776480 /* EditorImageUI */,
+				20DEE0362BECCCB600776480 /* EditorViewModel */,
 			);
 			path = EditorImages;
 			sourceTree = "<group>";
@@ -94,9 +152,29 @@
 		20DEE02E2BEC16EB00776480 /* EditorImageUI */ = {
 			isa = PBXGroup;
 			children = (
+				20DEE03B2BECD50E00776480 /* EditorToolbarUI.swift */,
+				20DEE0412BECD78300776480 /* EditorProcessedImageUI.swift */,
+				20DEE03F2BECD6A700776480 /* EditorInstrumentsUI.swift */,
+				20DEE03D2BECD60800776480 /* EditorFiltersUI.swift */,
 				20DEE0312BEC172B00776480 /* FilterExampleUI.swift */,
 			);
 			path = EditorImageUI;
+			sourceTree = "<group>";
+		};
+		20DEE0332BECC8F300776480 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				20DEE02C2BEC019000776480 /* PinchToZoom */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
+		20DEE0362BECCCB600776480 /* EditorViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				20DEE0372BECCDA600776480 /* EditorViewModel.swift */,
+			);
+			path = EditorViewModel;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -169,10 +247,20 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				20C5C4042BECFBEE0057D914 /* PasswordUI.swift in Sources */,
+				20DEE0422BECD78300776480 /* EditorProcessedImageUI.swift in Sources */,
 				20DEE0322BEC172B00776480 /* FilterExampleUI.swift in Sources */,
+				20C5C40D2BECFD810057D914 /* RegistrationView.swift in Sources */,
+				20DEE03E2BECD60800776480 /* EditorFiltersUI.swift in Sources */,
 				20DEE02B2BEA81BF00776480 /* PinchZoomView.swift in Sources */,
+				20DEE0382BECCDA600776480 /* EditorViewModel.swift in Sources */,
+				20C5C4062BECFC170057D914 /* EmailUI.swift in Sources */,
+				20DEE03C2BECD50E00776480 /* EditorToolbarUI.swift in Sources */,
+				20C5C40B2BECFCD40057D914 /* AuthorizationView.swift in Sources */,
+				20DEE0402BECD6A700776480 /* EditorInstrumentsUI.swift in Sources */,
 				20DEE01E2BE91DF700776480 /* EditorImageView.swift in Sources */,
 				20DEE01C2BE91DF700776480 /* AezFilterApp.swift in Sources */,
+				20C5C4022BECFBA40057D914 /* UniversalButtonUI.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -298,6 +386,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				ASSETCATALOG_COMPILER_INCLUDE_ALL_APPICON_ASSETS = NO;
 				CODE_SIGN_ENTITLEMENTS = AezFilter/AezFilter.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
@@ -306,6 +395,8 @@
 				ENABLE_HARDENED_RUNTIME = YES;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_CFBundleDisplayName = AezFilter;
+				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.photography";
 				"INFOPLIST_KEY_UIApplicationSceneManifest_Generation[sdk=iphoneos*]" = YES;
 				"INFOPLIST_KEY_UIApplicationSceneManifest_Generation[sdk=iphonesimulator*]" = YES;
 				"INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents[sdk=iphoneos*]" = YES;
@@ -314,8 +405,7 @@
 				"INFOPLIST_KEY_UILaunchScreen_Generation[sdk=iphonesimulator*]" = YES;
 				"INFOPLIST_KEY_UIStatusBarStyle[sdk=iphoneos*]" = UIStatusBarStyleDefault;
 				"INFOPLIST_KEY_UIStatusBarStyle[sdk=iphonesimulator*]" = UIStatusBarStyleDefault;
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
 				IPHONEOS_DEPLOYMENT_TARGET = 17.2;
 				LD_RUNPATH_SEARCH_PATHS = "@executable_path/Frameworks";
 				"LD_RUNPATH_SEARCH_PATHS[sdk=macosx*]" = "@executable_path/../Frameworks";
@@ -336,6 +426,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				ASSETCATALOG_COMPILER_INCLUDE_ALL_APPICON_ASSETS = NO;
 				CODE_SIGN_ENTITLEMENTS = AezFilter/AezFilter.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
@@ -344,6 +435,8 @@
 				ENABLE_HARDENED_RUNTIME = YES;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_CFBundleDisplayName = AezFilter;
+				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.photography";
 				"INFOPLIST_KEY_UIApplicationSceneManifest_Generation[sdk=iphoneos*]" = YES;
 				"INFOPLIST_KEY_UIApplicationSceneManifest_Generation[sdk=iphonesimulator*]" = YES;
 				"INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents[sdk=iphoneos*]" = YES;
@@ -352,8 +445,7 @@
 				"INFOPLIST_KEY_UILaunchScreen_Generation[sdk=iphonesimulator*]" = YES;
 				"INFOPLIST_KEY_UIStatusBarStyle[sdk=iphoneos*]" = UIStatusBarStyleDefault;
 				"INFOPLIST_KEY_UIStatusBarStyle[sdk=iphonesimulator*]" = UIStatusBarStyleDefault;
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
 				IPHONEOS_DEPLOYMENT_TARGET = 17.2;
 				LD_RUNPATH_SEARCH_PATHS = "@executable_path/Frameworks";
 				"LD_RUNPATH_SEARCH_PATHS[sdk=macosx*]" = "@executable_path/../Frameworks";
