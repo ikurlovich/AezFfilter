@@ -9,10 +9,11 @@ import SwiftUI
 
 struct EditorImageView: View {
     @StateObject var vm = EditorViewModel()
+    @ObservedObject var avm: AuthenticationViewModel
     
     var body: some View {
         VStack {
-            EditorToolbarUI(vm: vm)
+            EditorToolbarUI(vm: vm, avm: avm)
             
             Spacer()
             
@@ -37,5 +38,5 @@ struct EditorImageView: View {
 }
 
 #Preview {
-    EditorImageView()
+    EditorImageView(avm: AuthenticationViewModel())
 }

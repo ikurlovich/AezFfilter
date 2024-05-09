@@ -6,9 +6,12 @@
 //
 
 import SwiftUI
+import Firebase
 
 struct EditorToolbarUI: View {
     @ObservedObject var vm: EditorViewModel
+    @ObservedObject var avm: AuthenticationViewModel
+    @Environment(\.presentationMode) var presentationMode
     
     var body: some View {
         ZStack {
@@ -26,6 +29,8 @@ struct EditorToolbarUI: View {
                     .onTapGesture {
                         if vm.processedImage != nil {
                             vm.isShowAlert = true
+                        } else {
+                            signOut()
                         }
                     }
                 
@@ -42,8 +47,15 @@ struct EditorToolbarUI: View {
             }
         }
     }
+    
+    func signOut() {
+        avm.signOut()
+        avm.userIsLoggedIn = false
+        presentationMode.wrappedValue.dismiss()
+        print("out account")
+    }
 }
 
 #Preview {
-    EditorToolbarUI(vm: EditorViewModel())
+    EditorToolbarUI(vm: EditorViewModel(), avm: AuthenticationViewModel())
 }

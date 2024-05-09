@@ -6,6 +6,7 @@
 //
 
 import SwiftUI
+import Firebase
 
 struct AuthorizationView: View {
     @State private var email = ""
@@ -15,14 +16,28 @@ struct AuthorizationView: View {
     @State private var showsAlert = false
     @State private var alertTitle = ""
     @State private var alertMessage = ""
-    
-    enum whatWindowShow: String, CaseIterable {
-        case first, second
-    }
-    
-    @State private var windowShow: whatWindowShow = .first
+    @StateObject var avm = AuthenticationViewModel()
     
     var body: some View {
+        Group {
+            if avm.userIsLoggedIn {
+                EditorImageView(avm: avm)
+            } else {
+                content
+            }
+        }
+            .onAppear(perform: avm.getUser)
+            .onAppear {
+                Auth.auth().addStateDidChangeListener { auth, user in
+                    if user != nil {
+                        avm.userIsLoggedIn.toggle()
+                    }
+                }
+            }
+    }
+    
+    
+    var content: some View {
         NavigationStack {
             VStack(spacing: 50) {
                 HStack(spacing: 0) {
@@ -43,7 +58,6 @@ struct AuthorizationView: View {
                     }
                     
                     UniversalButtonUI("Регистрация", Color.accent) {
-                        windowShow = .second
                         isButtonPressed = true
                     }
                 }
@@ -51,15 +65,11 @@ struct AuthorizationView: View {
             }
             .padding(.horizontal, 20)
             .navigationDestination(isPresented: $isButtonPressed) {
-                switch windowShow {
-                case .first:
-                    EditorImageView()
-                        .navigationBarBackButtonHidden(true)
-                case .second:
-                    RegistrationView()
-                }
+                
+                RegistrationView()
+                
             }
-
+            
             .alert(isPresented: $showsAlert) {
                 Alert(
                     title: Text(alertTitle),
@@ -72,11 +82,17 @@ struct AuthorizationView: View {
     
     private func entryAccount() {
         if !email.isEmpty && !password.isEmpty {
-            windowShow = .first
-            isButtonPressed = true
+            Auth.auth().signIn(withEmail: email, password: password) { result, error in
+                if error != nil {
+                    print(error!.localizedDescription)
+                    alertTitle = "Ошибка входа"
+                    alertMessage = "Не удалось найти пользователя"
+                    showsAlert = true
+                }
+            }
         } else {
             alertTitle = "Ошибка входа"
-            alertMessage = "Пожалуйста проверьте правильность введённых данных"
+            alertMessage = "Не заполнены формы входа"
             showsAlert = true
         }
     }

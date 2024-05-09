@@ -6,6 +6,7 @@
 //
 
 import SwiftUI
+import Firebase
 
 struct RegistrationView: View {
     @State private var email = ""
@@ -41,9 +42,18 @@ struct RegistrationView: View {
     
     private func regAccount() {
         if password == repeatPassword && !password.isEmpty && !email.isEmpty  {
-            alertTitle = "Успешно!"
-            alertMessage = "Вы зарегистрированы:\n\(email)\n\(password)"
-            showsAlert = true
+            Auth.auth().createUser(withEmail: email, password: password) { result, error in
+                if error != nil {
+                    print(error!.localizedDescription)
+                    alertTitle = "Ошибка!"
+                    alertMessage = "\(error!.localizedDescription)"
+                    showsAlert = true
+                } else {
+                    alertTitle = "Успешно!"
+                    alertMessage = "Вы зарегистрированы:\n\(email)\n\(password)"
+                    showsAlert = true
+                }
+            }
         } else if !(password == repeatPassword) {
             alertTitle = "Ошибка"
             alertMessage = "Пароли не совпадают!"
